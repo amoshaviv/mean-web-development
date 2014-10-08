@@ -1,0 +1,25 @@
+<!-- The chat view -->
+<section data-ng-controller="ChatController">
+	<!-- List all messages -->
+    <div data-ng-repeat="message in messages" data-ng-switch="message.type">
+    	<!-- Make status messages bolder -->
+        <strong data-ng-switch-when='status'>
+            <span data-ng-bind="message.created | date:'mediumTime'"></span>
+            <span data-ng-bind="message.username"></span>
+            <span>is</span>
+            <span data-ng-bind="message.text"></span>
+        </strong>
+        <!-- Render regular messages -->
+        <span data-ng-switch-default>
+            <span data-ng-bind="message.created | date:'mediumTime'"></span>
+            <span data-ng-bind="message.username"></span>
+            <span>:</span>
+            <span data-ng-bind="message.text"></span>
+        </span>
+    </div>
+    <!-- The message form -->
+    <form ng-submit="sendMessage();">
+        <input type="text" data-ng-model="messageText">
+        <input type="submit">
+    </form>
+</section>

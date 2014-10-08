@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Use the 'title' property to render a page title  -->
+	<title><%= title %></title>
+</head>
+<body>
+  	<!-- Display flash messages  -->
+	<% for(var i in messages) { %>
+	   <div class="flash"><%= messages[i] %></div>
+	<% } %>
+
+	<!-- Render the signup form  -->
+	<form action="/signup" method="post">
+		<div>
+			<label>First Name:</label>
+			<input type="text" name="firstName" />
+		</div>
+		<div>
+			<label>Last Name:</label>
+			<input type="text" name="lastName" />
+		</div>
+		<div>
+			<label>Email:</label>
+			<input type="text" name="email" />
+		</div>
+		<div>
+			<label>Username:</label>
+			<input type="text" name="username" />
+		</div>
+		<div>	
+			<label>Password:</label>
+			<input type="password" name="password" />
+		</div>
+		<div>
+			<input type="submit" value="Sign up" />
+		</div>
+	</form>
+
+	<!-- Render the OAuth authentication links  -->
+	<a href="/oauth/facebook">Sign in with Facebook</a>
+	<a href="/oauth/twitter">Sign in with Twitter</a>
+	<a href="/oauth/google">Sign in with Google</a>
+</body>
+</html>
