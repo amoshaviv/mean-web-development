@@ -4,7 +4,7 @@
     <!-- Show the editing buttons to the article creator -->
     <div data-ng-show="authentication.user._id == article.creator._id">
         <a href="/#!/articles/{{article._id}}/edit">edit</a>
-        <a href="#" data-ng-click="delete();">delete</a>
+        <a href="/#!/" data-ng-click="delete();">delete</a>
     </div>
     <small>
         <em>Posted on</em>

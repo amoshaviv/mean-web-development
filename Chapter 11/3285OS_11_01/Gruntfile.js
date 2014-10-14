@@ -59,20 +59,7 @@ module.exports = function(grunt) {
 				src: ['server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/*.js', 'public/modules/**/*.js'],
 				options: {
 					node: true,
-					predef: [
-						"define",
-						"require",
-						"exports",
-						"module",
-						"describe",
-						"before",
-						"beforeEach",
-						"after",
-						"afterEach",
-						"it",
-						"inject",
-						"expect"
-					]
+					mocha: true
 				}
 			}
 		},
